@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>50Artist50StatesRadio</title>  
+  
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
+  <link rel="stylesheet" href="styles/app.css"/>
+  <link rel="stylesheet" href="styles/onsen-css-components-dark-theme.css"> 
+
+
+  <script src="lib/onsen/js/angular/angular.js"></script>    
+  <script src="lib/onsen/js/onsenui.js"></script>    
+  <script src="cordova.js"></script>  
+  <script src="js/app.js"></script>
+ <script src="js/jquery-1.10.2.min.js"></script> 
+ <script type="text/javascript" src="js/SocialSharing.js"></script>
+  
+
+</head>
+
+<body ng-controller="AppController">    
+        <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+        <div id="jp_container_1" class="jp-audio">
+                    <ons-navigator>
+                    <ons-page>
+                    <ons-toolbar fixed-style>
+					<div class="left"><div class="logo"></div></div>
+                    <div class="center"><div class="song_title"></div></div>
+		                <div class="right">
+		                   <span class="toolbar-button--quiet navigation-bar__line-height">
+                           <ons-icon icon="ion-android-share" onclick="modal.show('modal')"></ons-icon>
+                           </span>
+	                    </div>
+                    </ons-toolbar>
+
+
+
+
+<ons-modal var="modal">
+<span style="font-size:36px;color:white;text-align:center;">Share via:</span>
+<ons-icon icon="fa-facebook" size="52px" fixed-width="false" style="color:white;" onclick="window.plugins.socialsharing.shareViaFacebookWithPasteMessageHint('50Artist50StatesRadio', null /* img */, 'http://www.50djs50states.com', '50Artist50StatesRadio App', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})"></ons-icon>
+<ons-icon icon="fa-twitter" size="52px" fixed-width="false" style="color:white;" onclick="window.plugins.socialsharing.shareViaTwitter('50Artist50StatesRadio', null /* img */, 'http://www.50djs50states.com')"></ons-icon>
+<ons-icon icon="fa-times" size="24px" fixed-width="false" style="color:white;position:absolute;top:20px;right:20px;" onclick="modal.hide()"></ons-icon>
+
+</ons-modal>
+
+<ons-modal var="banner" class="banner">
+<ons-row align="center"><ons-col width="100%"><img src="img/50.png" width="80%" onclick="window.open('http://www.50djs50states.com/', '_blank', 'location=yes');"/></ons-col></ons-row>
+<ons-icon icon="fa-times" size="24px" fixed-width="false" style="color:white;position:absolute;top:20px;right:20px;" class="hide"></ons-icon>
+</ons-modal>
+<ons-modal var="banner1" class="banner">
+<ons-row align="center"><ons-col width="100%"><img src="img/50djs.png" width="80%" onclick="window.open('http://www.50djs50states.com/', '_blank', 'location=yes');"/></ons-col></ons-row>
+<ons-icon icon="fa-times" size="24px" fixed-width="false" style="color:white;position:absolute;top:20px;right:20px;" class="hide"></ons-icon>
+</ons-modal>
+<ons-modal var="banner2" class="banner">
+<ons-row align="center"><ons-col width="100%"><img src="img/EM.png" width="80%" onclick="window.open('http://www.50djs50states.com/', '_blank', 'location=yes');"/></ons-col></ons-row>
+<ons-icon icon="fa-times" size="24px" fixed-width="false" style="color:white;position:absolute;top:20px;right:20px;" class="hide"></ons-icon>
+</ons-modal>
+
+
+	                <div class="inner">
+                        <div class="jp-gui jp-interface">
+                            <div class="jp-controls-wrap">
+                            </div>
+                        </div>
+                        <div class="jp-playlist">
+                            <ul class="jp-playlist-inner">
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="jp-no-solution">
+                            <span>Update Required</span>
+                            <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                        </div>
+                    </div>
+ <ons-bottom-toolbar>
+                               <div class="twitter">
+								<ons-icon class="twitter_link" icon="fa-twitter-square" size="36px" fixed-width="false" onclick="window.open('http://www.50djs50states.com/', '_blank', 'location=yes');"></ons-icon>
+								</div>
+                    <div class="nav">
+								
+								<div class="jp-controls clearfix toolbar-button--quiet">
+								     
+                                    <a href="javascript:;" class="jp-previous disabled" tabindex="1"><ons-icon icon="fa-fast-backward" size="36px" fixed-width="false" ></ons-icon></a>
+                                    <a href="javascript:;" class="jp-play" tabindex="1"><ons-icon icon="fa-play" size="36px" fixed-width="false" ></ons-icon></a>
+                                    <a href="javascript:;" class="jp-pause" tabindex="1"><ons-icon icon="fa-pause" size="36px" fixed-width="false" ></ons-icon></i></a>
+                                    <a href="javascript:;" class="jp-next" tabindex="1"><ons-icon icon="fa-fast-forward" size="36px" fixed-width="false" ></ons-icon></a>
+                                    <a href="javascript:;" class="jp-stop" tabindex="1"></a>
+                                </div>
+                    </div>
+</ons-bottom-toolbar>
+        </div>
+ 
+<script src="assets/js/jquery.jplayer.min.js"></script>
+<script src="assets/js/jplayer.playlist.min.js"></script>	
+<script src="assets/js/jplayer.config.js"></script>
+</body>  
+</html>
